@@ -1,18 +1,18 @@
 <script lang="ts">
   import Page from "../Page.svelte";
-  import logo from "../../assets/images/logo.svg";
   import playerVsPlayerIcon from "../../assets/images/player-vs-player.svg";
   import Button from "../Button.svelte";
   import { routerStore } from "../../stores";
+  import Logo from "../Logo.svelte";
 
   function startGame() {
-    routerStore.update(() => ({ route: "game" }));
+    $routerStore.route = "game";
   }
 </script>
 
 <Page>
   <div class="container">
-    <img src={logo} alt="logo" />
+    <Logo />
     <div class="actions">
       <Button variant="primary" icon={playerVsPlayerIcon} onClick={startGame}>
         PLAYER VS PLAYER

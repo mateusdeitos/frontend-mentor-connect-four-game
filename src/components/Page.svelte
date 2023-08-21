@@ -1,4 +1,8 @@
-<main>
+<script lang="ts">
+  export let isGamePage = false;
+</script>
+
+<main class:game={isGamePage}>
   <slot />
 </main>
 
@@ -11,5 +15,9 @@
     width: 100%;
     height: 100vh;
     background-color: var(--dark-purple);
+  }
+
+  main.game {
+    background-color: var(--purple);
   }
 </style>
